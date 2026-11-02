@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Appliaction/Application.csproj" />
+    <Project Path="src/Core/Core.csproj" />
+    <Project Path="src/Infra/Infra.csproj" />
+    <Project Path="src/SmartERP.API/SmartERP.API.csproj" />
+  </Folder>
+</Solution>
