@@ -4,12 +4,14 @@ namespace Core.Entities;
 
 public class User
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Password_hash { get; set; }
-    public UserRoles Role { get; set; }
-    public bool IsActive { get; set; }
-    public DateTime Created_At { get; set; }
-    public DateTime Updated_At { get; set; }
+    public int Id { get; init; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string PasswordHash { get; set; } = string.Empty;
+    public UserRoles Role { get; set; } = UserRoles.Anonymous;
+    public bool IsActive { get; set; } = true;
+    public int FailedLoginCount { get; set; } = 0;
+    public DateTime? LockoutEndDate { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }

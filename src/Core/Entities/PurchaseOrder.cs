@@ -1,15 +1,22 @@
-﻿using System.Runtime.InteropServices.JavaScript;
+﻿using Core.Enums;
 
 namespace Core.Entities;
 
 public class PurchaseOrder
 {
     public int Id { get; set; }
-    public int Supplier_Id { get; set; }
-    public DateTime Order_Date { get; set; }
-    public string Status { get; set; }
-    public decimal Total_Amount { get; set; }
-    public string Created_By { get; set; }
-    public string Approved_By { get; set; }
-    public DateTime Created_At { get; set; }
+    public string PONumber { get; set; } = string.Empty;
+    public int SupplierId { get; set; }
+    // Changed from DateTime → DateOnly (SRS/data types: plain order date, no time)
+    public DateOnly OrderDate { get; set; }
+    public PurchaseOrderStatus Status { get; set; } // Draft / Approved / Received / Cancelled
+    public decimal TotalAmount { get; set; }
+    public int CreatedBy { get; set; }
+    public int? ApprovedBy { get; set; }
+    public DateTime? ApprovedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
+
+    public User CreatedByUser { get; set; } = null!;
+    public User? ApprovedByUser { get; set; }
+    public Supplier Supplier { get; set; } = null!;
 }

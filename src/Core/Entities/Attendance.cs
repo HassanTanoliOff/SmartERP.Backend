@@ -1,10 +1,13 @@
-﻿namespace Core.Entities;
+﻿using Core.Enums;
+
+namespace Core.Entities;
 
 public class Attendance
 {
     public int Id { get; set; }
-    public int Employee_Id { get; set; }
-    public DateTime Date { get; set; }
-    public string Status { get; set; }
-    public Employee Employee { get; set; }
+    public int EmployeeId { get; set; }
+    // Changed from DateTime → DateOnly (SRS/data types: plain attendance date, no time)
+    public DateOnly Date { get; set; }
+    public AttendanceStatus Status { get; set; } = AttendanceStatus.Absent;
+    public Employee Employee { get; set; } = null!;
 }

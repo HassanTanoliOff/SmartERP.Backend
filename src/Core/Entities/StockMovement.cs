@@ -1,16 +1,20 @@
-﻿namespace Core.Entities;
+﻿using Core.Enums;
+
+namespace Core.Entities;
 
 public class StockMovement
 {
     public int Id { get; set; }
-    public int Product_Id { get; set; }
-    public int Warehouse_Id { get; set; }
+    public int ProductId { get; set; }
+    public int WarehouseId { get; set; }
     public int Quantity { get; set; }
-    public string Movement_Type { get; set; }
-    public string Reference_Type { get; set; }
-    public int Reference_Id { get; set; }
-    public DateTime Created_Date { get; set; }
-    public DateTime Updated_Date { get; set; }
-    public Warehouse Warehouse { get; set; }
-    public Product Product { get; set; }
+    public StockMovementType MovementType { get; set; } // Recipet / Sale / Adjustment Transfer out / transfer In
+    public StockMovementReferenceTypes ReferenceType { get; set; }
+    public int ReferenceId { get; set; }
+    public string? ReasonAdjustment { get; set; }
+    public int CreatedBy { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public Warehouse Warehouse { get; set; } = null!;
+    public Product Product { get; set; } = null!;
+    public User CreatedByUser { get; set; } = null!;
 }
