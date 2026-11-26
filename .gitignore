@@ -480,3 +480,20 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Obsidian vault settings (if opening docs/ai as a vault)
+.obsidian/
+
+# Local environment & secret override files
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.local.json
+appsettings.Secrets.json
+secrets.json
+
+# Private keys & certificates
+*.pem
+*.key
+*.p12
+*.crt

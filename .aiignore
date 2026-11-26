@@ -1,0 +1,22 @@
+# .aiignore — Prevent AI tools/models from reading secret or credential files
+
+# App settings (may contain connection strings, JWT keys, API keys)
+appsettings.json
+appsettings.*.json
+
+# Environment & secret files
+.env
+.env.*
+secrets.json
+*secret*
+*credential*
+
+# Private keys & certificates
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+*.snk
+*.publishsettings
